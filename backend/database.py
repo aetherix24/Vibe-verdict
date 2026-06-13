@@ -1,15 +1,19 @@
 import psycopg2 
 import json 
- 
-conn = psycopg2.connect(
-    dbname="musicpersonality_roaster",
-    user="atherix" ,
-    password="24281",
-    host="localhost",
-    port="5432"  
-) 
+import os 
+from dotenv import load_dotenv 
 
+ 
+def get_db_connection(): 
+    return psycopg2.connect(
+        host=os.getenv("DB_HOST"),
+        port=os.getenv("DB_PORT"),
+        database=os.getenv("DB_NAME"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD")
+    )
 def save_roast(songs , archetype, roast):
+    conn =get_db_connection()
     try:
         cur = conn.cursor() 
            
