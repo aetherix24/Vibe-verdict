@@ -35,14 +35,7 @@ function App() {
   const [voteMessage , setVoteMessage] = useState("");
   const [copied , setCopied] = useState(false);
   const[hasVoted , setHasvoted]= useState(false);
-  const roastPlaylist = async () => {
 
-  if (loading) return;
-
-  setLoading(true);
-
-  
-}
   const genres =
   result?.analysis?.map(
     item => item.genre || "unknown"
@@ -152,7 +145,10 @@ const voteReaction = async (reactionType) => {
   }
 };
 
-  const roastPlaylist = async () => { 
+  const roastPlaylist = async () => {  
+    
+  if (loading) return;
+
     setLoading(true); 
     setResult(null); 
   const startTime = Date.now();
