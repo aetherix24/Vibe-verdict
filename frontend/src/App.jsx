@@ -165,7 +165,7 @@ const voteReaction = async (reactionType) => {
     }
 
     const response = await fetch( 
-      "https://vibe-verdict-api.onrender.com/analyze"",
+      "https://vibe-verdict-api.onrender.com/analyze",
       {
         method: "POST",
         headers: {
