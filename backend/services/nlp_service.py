@@ -9,10 +9,16 @@ emotion_classifier = pipeline(
 ) 
 
 # Embedding model 
-embedding_model = SentenceTransformer(
+embedding_model = None
+
+def get_embedding_model():
+    global embedding_model
+
+    if embedding_model is None:
+            embedding_model = SentenceTransformer(
         "all-MiniLM-L6-v2"
 ) 
-
+    return embedding_model
 # Music -aware emotion themes 
 sad_themes = [
     "numb",
