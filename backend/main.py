@@ -100,7 +100,7 @@ def get_stats():
         "total_songs": total_songs,
         "top_archetype": top_archetype
     }
-@app.gethealth("/health")
+@app.get("/health")
 def health():
     return{"status":"ok"}
 
