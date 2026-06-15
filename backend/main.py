@@ -26,9 +26,10 @@ app.add_middleware(
 
 def get_db_connection():
     return psycopg2.connect(
-        host="localhost",
-        database="musicpersonality_roaster",
-        user="atherix",
+        host=os.getenv("DB_HOST"),
+        port=os.getenv("DB_PORT"),
+        database=os.getenv("DB_NAME"),
+        user=os.getenv("DB_USER")
         password=os.getenv("DB_PASSWORD")
     )
 
