@@ -667,7 +667,9 @@ duration-300
         </div>
         </div>
         
-     
+        <footer className="mt-12 text-center text-gray-400 text-sm pb-6">
+          © 2026 Vibe Verdict • Created by Aaditya Sonkar
+       </footer>
         </div>
     </div>   );
 }
