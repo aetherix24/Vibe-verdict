@@ -31,4 +31,17 @@ AI / NLP:
 - Sentence Transformers
 
 Deployment:
-- Netlify 
+- Netlify
+
+
+
+react
+fastapi
+python
+postgresql
+nlp
+ai
+transformers
+music
+fullstack
+webapp
