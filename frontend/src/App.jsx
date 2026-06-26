@@ -86,7 +86,7 @@ const topGenre =
     setCommunity(communityData.community);
 
     const statsResponse = await fetch(
-      "https://vibe-verdict-production.up.railway.app//stats"
+      "https://vibe-verdict-production.up.railway.app/stats"
     );
 
     const statsData = await statsResponse.json();
