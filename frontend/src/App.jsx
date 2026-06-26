@@ -124,7 +124,7 @@ const voteReaction = async (reactionType) => {
   try {
 
     await fetch(
-      `https://vibe-verdict-production.up.railway.app//react/${reactionType}`,
+      `https://vibe-verdict-production.up.railway.app/react/${reactionType}`,
       {
         method: "POST"
       }
