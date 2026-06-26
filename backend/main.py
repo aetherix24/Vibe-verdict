@@ -28,7 +28,7 @@ app.add_middleware(
 
 def get_db_connection():
     return psycopg2.connect(
-        os.getenv("DATABASE_URL"),
+        os.getenv("DB_HOST"),
         sslmode="require"
     
     )
