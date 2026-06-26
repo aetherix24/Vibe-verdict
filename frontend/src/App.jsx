@@ -94,7 +94,7 @@ const topGenre =
 
   } catch (error) {
     console.log(error);
-  }
+  } 
 };    
 
 useEffect(() =>{
