@@ -19,6 +19,8 @@ def get_embedding_model():
         "all-MiniLM-L6-v2"
 ) 
     return embedding_model
+
+    embedding = get_embedding_model().encode(song).tolist()
 # Music -aware emotion themes 
 sad_themes = [
     "numb",
@@ -103,7 +105,8 @@ def analyze_songs(song_list):
             emotion = "love"
             confidence = max(confidence,0.90)
         # Embedding generation 
-        embedding = embedding_model.encode(song).tolist()
+        model = embedding_model()
+        embedding=model.encode(song).tolist()
 
         results.append({
         "song": song ,
