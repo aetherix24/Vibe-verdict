@@ -79,14 +79,14 @@ const topGenre =
    const loadCommunityData = async () => {
   try {
     const communityResponse = await fetch(
-      "https://vibe-verdict-api.onrender.com/community"
+      "https://vibe-verdict-production.up.railway.app/community"
     );
 
     const communityData = await communityResponse.json();
     setCommunity(communityData.community);
 
     const statsResponse = await fetch(
-      "https://vibe-verdict-api.onrender.com/stats"
+      "https://vibe-verdict-production.up.railway.app//stats"
     );
 
     const statsData = await statsResponse.json();
@@ -104,7 +104,7 @@ useEffect(() =>{
     const loadReactions = async () => {
   try {
     const response = await fetch(
-      "https://vibe-verdict-api.onrender.com/reactions"
+      "https://vibe-verdict-production.up.railway.app/reactions"
     );
 
     const data = await response.json();
@@ -124,7 +124,7 @@ const voteReaction = async (reactionType) => {
   try {
 
     await fetch(
-      `https://vibe-verdict-api.onrender.com/react/${reactionType}`,
+      `https://vibe-verdict-production.up.railway.app//react/${reactionType}`,
       {
         method: "POST"
       }
@@ -165,7 +165,7 @@ const voteReaction = async (reactionType) => {
     }
 
     const response = await fetch( 
-      "https://vibe-verdict-api.onrender.com/analyze",
+      "https://vibe-verdict-production.up.railway.app/analyze",
       {
         method: "POST",
         headers: {
