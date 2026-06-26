@@ -8,17 +8,11 @@ emotion_classifier = pipeline(
     model="j-hartmann/emotion-english-distilroberta-base"
 ) 
 
-# Embedding model 
-embedding_model = None
+    # Embedding model 
+embedding_model = SentenceTransformer(
+            "all-MiniLM-L6-v2"
+    ) 
 
-def get_embedding_model():
-    global embedding_model
-
-    if embedding_model is None:
-            embedding_model = SentenceTransformer(
-        "all-MiniLM-L6-v2"
-) 
-    return embedding_model
 
 
 # Music -aware emotion themes 
@@ -104,10 +98,10 @@ def analyze_songs(song_list):
         elif any(theme in lower_song for theme in love_themes): 
             emotion = "love"
             confidence = max(confidence,0.90)
-            
+
         # Embedding generation 
-        model = get_embedding_model()
-        embedding=model.encode(song).tolist()
+
+        embedding = embedding_model.encode(song).tolist()
 
         results.append({
         "song": song ,
